@@ -1,0 +1,494 @@
+/* ==========================================================================
+   ESPAÇO VIVÊNCIAS - FOLHA DE ESTILOS
+   Identidade: Azul Aquarela, Sereno e Acolhedor
+   ========================================================================== */
+
+:root {
+  /* Paleta Exata Solicitada */
+  --color-royal: #0B3FA8;
+  --color-navy: #072B6E;
+  --color-aqua: #1E7FD8;
+  --color-sky: #A9DCF7;
+  --color-ice: #F3F9FE;
+  --color-white: #FFFFFF;
+  --color-text: #1B2A41;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
+
+  /* Fontes */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+
+  /* Efeitos */
+  --transition-default: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --shadow-soft: 0 10px 30px rgba(7, 43, 110, 0.07);
+}
+
+/* Base & Tipografia */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .section-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.bg-ice-blue {
+  background-color: var(--color-ice);
+}
+
+.text-primary-dark {
+  color: var(--color-navy);
+}
+
+.sub-badge {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-aqua);
+}
+
+.section-heading {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.max-w-700 {
+  max-width: 700px;
+}
+
+/* ==========================================================================
+   Header & Navbar
+   ========================================================================== */
+#mainNavbar {
+  transition: all var(--transition-default);
+  padding: 1.1rem 0;
+  background-color: transparent;
+}
+
+#mainNavbar.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 0.6rem 0;
+  box-shadow: 0 4px 20px rgba(11, 63, 168, 0.08);
+}
+
+#mainNavbar.navbar-scrolled .nav-link {
+  color: var(--color-text);
+}
+
+#mainNavbar.navbar-scrolled .brand-title {
+  color: var(--color-navy);
+}
+
+#mainNavbar.navbar-scrolled .brand-subtitle {
+  color: var(--color-aqua);
+}
+
+/* Em estado transparente no Hero (tela escura) */
+#mainNavbar:not(.navbar-scrolled) .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#mainNavbar:not(.navbar-scrolled) .nav-link:hover {
+  color: #ffffff;
+}
+
+#mainNavbar:not(.navbar-scrolled) .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+  filter: invert(1);
+}
+
+/* Logotipo */
+.logo-aquarela-badge {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aquarela-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 4px rgba(30, 127, 216, 0.3));
+}
+
+.logo-symbol {
+  position: relative;
+  font-family: var(--font-script);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.brand-text {
+  line-height: 1.15;
+}
+
+.brand-title {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: color var(--transition-default);
+}
+
+.brand-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-sky);
+  font-weight: 500;
+}
+
+.btn-nav-cta {
+  border-radius: 50px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.85rem;
+  border-color: var(--color-aqua);
+  color: #ffffff;
+  background-color: var(--color-aqua);
+}
+
+.btn-nav-cta:hover {
+  background-color: var(--color-royal);
+  border-color: var(--color-royal);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-section {
+  min-height: 100vh;
+  padding-top: 130px;
+  padding-bottom: 90px;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-royal) 70%, #0d4bc7 100%);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-weight: 300;
+  max-width: 600px;
+}
+
+/* Manchas Aquarela Hero */
+.hero-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shape-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+
+.shape-1 {
+  width: 450px;
+  height: 450px;
+  background: var(--color-aqua);
+  top: -100px;
+  right: -50px;
+}
+
+.shape-2 {
+  width: 380px;
+  height: 380px;
+  background: var(--color-sky);
+  bottom: 50px;
+  left: -80px;
+}
+
+.wave-separator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.wave-separator svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* Botões */
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.6rem;
+  transition: all var(--transition-default);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* ==========================================================================
+   Cards e Seções
+   ========================================================================== */
+.service-card {
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+  background-color: #ffffff;
+  border: 1px solid rgba(169, 220, 247, 0.4);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(11, 63, 168, 0.1) !important;
+}
+
+.card-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background-color: var(--color-ice);
+  color: var(--color-aqua);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Timeline */
+.step-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--color-royal);
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* Equipe */
+.team-img-placeholder {
+  height: 240px;
+  background: linear-gradient(135deg, #e4f2fb 0%, #cde8f9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card {
+  transition: transform var(--transition-default);
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Instagram Cards */
+.insta-post-placeholder {
+  min-height: 200px;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-aqua) 100%);
+}
+
+.insta-card {
+  transition: transform var(--transition-default);
+}
+
+.insta-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Accordion */
+.custom-accordion .accordion-button {
+  font-weight: 600;
+  color: var(--color-navy);
+  background-color: transparent;
+  padding: 1.15rem 1rem;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+  color: var(--color-aqua);
+  background-color: var(--color-ice);
+  box-shadow: none;
+}
+
+.custom-accordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--color-sky);
+}
+
+/* Círculo de ícone */
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Aquarela Canvas Card (Sobre) */
+.aquarela-canvas-card {
+  background: radial-gradient(circle, #f3f9fe 0%, #e2f2fc 100%);
+  border: 2px dashed rgba(30, 127, 216, 0.25);
+}
+
+/* ==========================================================================
+   Botões Flutuantes e Rodapé
+   ========================================================================== */
+.footer-section {
+  background-color: var(--color-navy);
+}
+
+.hover-white:hover {
+  color: #ffffff !important;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão Flutuante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-whatsapp);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform var(--transition-default);
+  animation: pulse-ring 2.5s infinite;
+}
+
+.whatsapp-float:hover {
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 70px;
+  background-color: #ffffff;
+  color: var(--color-navy);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-default);
+}
+
+.whatsapp-float:hover .whatsapp-float-tooltip {
+  opacity: 1;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Botão Voltar ao Topo */
+.btn-top {
+  position: fixed;
+  bottom: 95px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--color-sky);
+  color: var(--color-navy);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-default);
+}
+
+.btn-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn-top:hover {
+  background-color: var(--color-ice);
+  color: var(--color-aqua);
+}
+
+/* Animação suave de entrada (fade-up) */
+.animate-fade {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Acessibilidade: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade, .whatsapp-float {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
